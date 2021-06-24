@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+		<AWSProjectType>Lambda</AWSProjectType>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="appsettings.development.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="appsettings.development.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AWSSDK.Core" Version="3.7.0.35" />
+		<PackageReference Include="Olive" Version="2.1.275" />
+		<PackageReference Include="Olive.Aws.EventBus" Version="2.1.144" />
+		<PackageReference Include="Olive.Aws.LambdaFunction" Version="1.0.104" />
+		<PackageReference Include="Olive.EventBus" Version="2.1.127" />
+		<PackageReference Include="Olive.Aws" Version="2.2.126" />
+	</ItemGroup>
+</Project>
